@@ -1,20 +1,51 @@
-import {jsxRenderMethod} from "./jsx/jsxMethodRender.js";
-import {Counter} from "./src/Counter.jsx";
-import {Popin} from "./src/Popin.jsx";
+import { render } from 'solid-js/web';
+import {Counter} from "./components/Counter";
 
 const root = document.querySelector('#app');
-const root2 = document.querySelector('#app2');
 
-
-/** @jsx jsxRenderMethod */
 const App = () => {
     return (
-        <div>
-            Hello World<br/>
-            <Counter counter={2}/>
-        </div>
+        <h1>
+            Hello world
+            <Counter counter={5}/>
+            <Counter counter={5}/>
+            <Counter counter={5}/>
+            <Counter counter={5}/>
+            <Counter counter={5}/>
+            <Counter counter={5}/>
+            <Counter counter={5}/>
+            <Counter counter={5}/>
+            <Counter counter={5}/>
+            <Counter counter={5}/>
+            <Counter counter={5}/>
+            <Counter counter={5}/>
+            <Counter counter={5}/>
+            <Counter counter={5}/>
+            <Counter counter={5}/>
+            <Counter counter={5}/>
+            <Counter counter={5}/>
+            <Counter counter={5}/>
+            <Counter counter={5}/>
+            <Counter counter={5}/>
+            <Counter counter={5}/>
+            <Counter counter={5}/>
+            <Counter counter={5}/>
+            <Counter counter={5}/>
+            <Counter counter={5}/>
+            <Counter counter={5}/>
+            <Counter counter={5}/>
+            <Counter counter={5}/>
+            <Counter counter={5}/>
+            <Counter counter={5}/>
+        </h1>
     );
-}
+};
 
-root.append(<App/>)
-root2.append(<Popin/>)
+if (root) {
+    const dispose = render(() => <App/>, root);
+
+    if (import.meta.hot) {
+        import.meta.hot.accept();
+        import.meta.hot.dispose(dispose);
+    }
+}
